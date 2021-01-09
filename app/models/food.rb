@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
-  belongs_to :resutaurant
-  has_one :line_foods
-  belongs_to :orders
+  belongs_to :restaurant
+  belongs_to :order, optional: true
+  has_one :line_food
 end
