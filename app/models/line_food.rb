@@ -7,7 +7,7 @@ class LineFood < ApplicationRecord
 
   scope :active, -> {where(active: true)}
   # picked_restaurant_idは、scopeの引数
-  scope :order_restaurant, -> (picked_restaurant_id) {where.not(restaurant_id: picked_restaurant_id)}
+  scope :other_restaurant, -> (picked_restaurant_id) {where.not(restaurant_id: picked_restaurant_id)}
 
   def total_amount
     food.price * count
