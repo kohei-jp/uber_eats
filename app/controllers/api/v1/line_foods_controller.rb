@@ -5,7 +5,8 @@ module Api
 
       def index
         line_foods = LineFood.active.all
-        if line_foods.exsists?
+        # binding.pry
+        if line_foods.exists?
           render json: {
             line_food_ids: line_foods.map{ |line_food| line_food.id },
             restaurant: line_foods[0].restaurant,
@@ -19,7 +20,7 @@ module Api
 
       def create
         # 仮注文データに他の店舗の商品が存在するか?
-        if LineFood.active.other_restaurant(@ordered_food.restaurant.id).exsists?
+        if LineFood.active.other_restaurant(@ordered_food.restaurant.id).exists?
           return render json: {
             # その店名
             existing_restaurant: LineFood.other_restaurant(@ordered_food.restaurant.id).first.restaurant.name,
@@ -81,9 +82,8 @@ module Api
             restaurant: ordered_food.restaurant,
             active: true
           )
-      end
-
-      
+        end
+      end      
     end
   end
 end
