@@ -2,6 +2,7 @@ module Api
   module V1
     class OrdersController < ApplicationController
       def create
+        # binding.pry
         posted_line_foods = LineFood.where(id: params[:line_food_ids])
         # 仮注文をorderに紐づける
         order = Order.new(
@@ -18,6 +19,7 @@ module Api
       private
       def total_price(posted_line_foods)
         posted_line_foods.sum{|line_food| line_food.total_amount} + posted_line_foods.first.restaurant.fee
+      end
     end
   end
 end

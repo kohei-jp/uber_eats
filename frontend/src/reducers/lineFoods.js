@@ -36,6 +36,6 @@ export const lineFoodsReducer = (state, action) => {
         postState: REQUEST_STATE.OK,
       };
     default:
-      // throw new Error();
+      throw new Error();
   }
 }

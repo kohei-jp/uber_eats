@@ -91,20 +91,23 @@ export const Foods = ({
     postLineFoods({
       foodId: state.selectedFood.id,
       count: state.selectedFoodCount,
-    }).then(() => history.push('/orders'))
-      .catch((e) => {
-        if (e.response.status === HTTP_STATUS_CODE.NOT_ACCEPTABLE) {
-          setState({
-            ...state,
-            isOpenOrderDialog: false,
-            isOpenNewOrderDialog: true,
-            existingResutaurautName: e.response.data.existing_restaurant,
-            newResutaurautName: e.response.data.new_restaurant,
-          })
-        } else {
-          throw e;
-        }
-      })
+    })
+    .then(() => 
+      history.push('/orders')
+    )
+    .catch((e) => {
+      if (e.response.status === HTTP_STATUS_CODE.NOT_ACCEPTABLE) {
+        setState({
+          ...state,
+          isOpenOrderDialog: false,
+          isOpenNewOrderDialog: true,
+          existingResutaurautName: e.response.data.existing_restaurant,
+          newResutaurautName: e.response.data.new_restaurant,
+        })
+      } else {
+        throw e;
+      }
+    })
   };
 
   const replaceOrder = () => {

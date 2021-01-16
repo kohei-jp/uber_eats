@@ -11,12 +11,9 @@ export const postLineFoods = async(params) => {
     }
   )
   .then(res => {
-    console.log("then")
     return res.data
   })
-  .catch((e) => { 
-    console.log(e)
-    throw e; })
+  .catch((e) => { throw e; })
 };
 
 // 新規注文を開始する場合
@@ -37,7 +34,6 @@ export const replaceLineFoods = async(params) => {
 export const fetchLineFoods = async() => {
   return await axios.get(lineFoods)
   .then(res => {
-    console.log("fetchLineFoodsは、success");
     return res.data
   })
   .catch((e) => { throw e; })

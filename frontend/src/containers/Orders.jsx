@@ -66,8 +66,8 @@ export const Orders = () => {
       line_food_ids: state.lineFoodsSummary.line_food_ids,
     }).then(() => {
       dispatch({ type: lineFoodsActionTypes.POST_SUCCESS });
-      window.location.reload();
     });
+    window.location.reload();
   };
 
   const orderButtonLabel = () => {
