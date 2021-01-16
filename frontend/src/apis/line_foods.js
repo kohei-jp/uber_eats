@@ -33,3 +33,12 @@ export const replaceLineFoods = async(params) => {
   })
   .catch((e) => { throw e; })
 };
+
+export const fetchLineFoods = async() => {
+  return await axios.get(lineFoods)
+  .then(res => {
+    console.log("fetchLineFoodsは、success");
+    return res.data
+  })
+  .catch((e) => { throw e; })
+};

@@ -5,15 +5,15 @@ module Api
 
       def index
         line_foods = LineFood.active.all
-        # binding.pry
         if line_foods.exists?
           render json: {
             line_food_ids: line_foods.map{ |line_food| line_food.id },
             restaurant: line_foods[0].restaurant,
             count: line_foods.sum{ |line_food| line_food[:count] },
             amount: line_foods.sum{ |line_food| line_food.total_amount },
-          }, status: :ok
-        else
+            }, status: :ok
+            # binding.pry
+          else
           render json: {}, status: :no_content
         end
       end
