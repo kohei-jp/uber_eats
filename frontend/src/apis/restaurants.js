@@ -7,6 +7,7 @@ export const fetchRestaurants = async() => {
   // get(uri)メソッドの基本形. POSTならaxios.post(...)
   return await axios.get(restaurantsIndex)
   .then(res => {
+    console.log(res.data);
     return res.data
   })
   // 本来は、varidationエラーを返す

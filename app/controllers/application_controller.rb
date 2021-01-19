@@ -1,7 +1,3 @@
-class ApplicationController < ActionController::API
-  before_action :fake_load
+class ApplicationController < ActionController::Base # 一旦
 
-  def fake_load
-    sleep(1)
-  end
 end

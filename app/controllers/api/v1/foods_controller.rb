@@ -1,6 +1,6 @@
 module Api
   module V1
-    class FoodsController < ApplicationController
+    class FoodsController < Api::V1::ApiController
       def index
         restaurant = Restaurant.find(params[:restaurant_id])
         foods = restaurant.foods

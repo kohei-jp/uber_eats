@@ -1,6 +1,6 @@
 module Api
   module V1
-    class LineFoodsController < ApplicationController
+    class LineFoodsController < Api::V1::ApiController
       before_action :set_food, only: %i[create replace]
 
       def index

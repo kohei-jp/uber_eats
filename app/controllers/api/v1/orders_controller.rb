@@ -1,6 +1,6 @@
 module Api
   module V1
-    class OrdersController < ApplicationController
+    class OrdersController < Api::V1::ApiController
       def create
         # binding.pry
         posted_line_foods = LineFood.where(id: params[:line_food_ids])
