@@ -108,13 +108,14 @@ export const Orders = () => {
             </OrderItemWrapper>
           <div>
             {
-              isExistsLineFoodsSummary &&
+              isExistsLineFoodsSummary() && (
                 <OrderButton
                   onClick={() => postLineFoods()}
                   disabled={state.postState === REQUEST_STATE.LOADING || state.postState === REQUEST_STATE.OK}
-                >
+                  >
                   {orderButtonLabel()}
                 </OrderButton>
+              )
             }
             {
               state.fetchState === REQUEST_STATE.OK && !(state.lineFoodsSummary) &&
