@@ -9,7 +9,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { fetchRestaurants } from '../apis/restaurants'; 
 
 // reducers
-import {initialState, restaurantsActionTypes, restaurantsReducer} from "../reducers/restaurants"
+import { initialState, restaurantsActionTypes, restaurantsReducer } from "../reducks/restaurants/index"
 
 // constants
 import {REQUEST_STATE} from "../constants";
